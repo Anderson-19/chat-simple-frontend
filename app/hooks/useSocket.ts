@@ -8,7 +8,7 @@ export const useSocket = () => {
   const [messages, setMessages] = useState<Message[]>([]);
 
   useEffect(() => {
-    const socketIo = io('http://localhost:3000/');
+    const socketIo = io('http://192.168.56.103:3001/');
 
     socketIo.on('connect', () => {
       setIsConnected(true);

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SocketCliente from './client';
+import ChatClient from "./ui/chat";
 
 
 export default function SocketPage() {
@@ -10,7 +10,7 @@ export default function SocketPage() {
             <h1 className="text-white text-2xl mx-auto">Sockets</h1>
         </div>
 
-        <SocketCliente />
+        <ChatClient />
     </div>
   )
 }
