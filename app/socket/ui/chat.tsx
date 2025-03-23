@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Message } from '../../interfaces/message';
 
 export default function ChatClient() {
-  const { isConnected, messages: socketMessages, sendMessage } = useSocket();
+  const { isConnected, messages: socketMessages, sendMessage, setSala, unirmeSala } = useSocket();
   const [inputMessage, setInputMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -81,6 +81,20 @@ export default function ChatClient() {
             Send
           </button>
         </form>
+        <div className='flex mt-8'>
+          <input onClick={() => {
+            setSala('ALTA');
+            unirmeSala('ALTA');
+            }}type="button" value="ALTA" className='bg-slate-400 text-white mx-auto p-3 w-full cursor-pointer hover:bg-slate-300' />
+          <input onClick={() => {
+            setSala('BAJA');
+            unirmeSala('BAJA');
+            }}type="button" value="BAJA" className='bg-slate-400 text-white mx-auto p-3 w-full cursor-pointer hover:bg-slate-300' />
+          <input onClick={() => {
+            setSala('LINEAL');
+            unirmeSala('LINEAL');
+            }}type="button" value="LINEAL" className='bg-slate-400 text-white mx-auto p-3 w-full cursor-pointer hover:bg-slate-300' />
+        </div>
       </div>
     </main>
   );
